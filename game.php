@@ -1,5 +1,4 @@
 <?php
-var_dump($_POST);
 echo"
 <!DOCTYPE html>
 <html lang='uk'>
