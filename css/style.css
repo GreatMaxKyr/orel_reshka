@@ -1,0 +1,27 @@
+.ok {
+    padding: 10px 15px;
+    color: #000;
+    border: #7fffd4 2px solid;
+    border-radius: 3px;
+    background-color: transparent;
+}
+
+.reden,
+.ormax {
+    width: 200px;
+    height: 200px;
+    border: none;
+    background: transparent url(../img/orel.png) center /cover;
+    filter: drop-shadow( 0 0 5px rgba( 0,0,0,0.5)) grayscale(80%);
+    transition: all 0.5s ease;
+}
+
+.reden {
+    background: transparent url(../img/reshka.png) center /cover;
+}
+
+.reden:hover,
+.ormax:hover {
+    filter: drop-shadow( 0 0 5px rgba( 255,215,0,0.5)) grayscale(0%);
+    transform: scale(1.1);
+}
