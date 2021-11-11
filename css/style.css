@@ -1,11 +1,67 @@
+@font-face {
+    font-family: 'Minecraftia';
+    src: url('../fonts/Minecraftia-Regular.woff2') format('woff2'),
+        url('../fonts/Minecraftia-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    margin: 0;
+    background: url(../img/back.jpg) center/cover;
+    color: #fff;
+}
+
+.levelcheck {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.emh {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    color: #7fffd4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.coinform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0; 
+}
+
+
+.maxform,
+.denform {   
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.coins {
+    display: inline-block;
+}
+
 .ok {
-    padding: 15px 30px;
-    color: #25252c;
+    margin: 0 0 40px ;
+    padding: 15px 25px 5px ;
+    color: #fff;   
     font-size: 16px;
     font-weight: bold;
     border-radius: 25px;
     background-color: transparent;
     border: #7fffd4 2px solid;
+    font-family: Minecraftia;
+    vertical-align: middle;
+}
+
+.ok:hover {
+    background-color: #7fffd4;
 }
 
 .reden,
@@ -27,4 +83,43 @@
 .ormax:hover {
     filter: drop-shadow( 0 0 5px rgba( 255,215,0,0.5)) grayscale(0%);
     transform: scale(1.1);
+}
+
+.resultbody {
+    text-align: center;
+}
+
+.text {
+    text-align: center;
+}
+
+.weigh {
+    color: #7fffd4;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.win {
+    background: url(../img/confetti_PNG87039.png) no-repeat center/cover,url(../img/trophy.png) no-repeat center;
+    height: 700px;
+}
+
+.lose {
+    background: url(../img/lose.png) no-repeat center,url(../img/mak.png) no-repeat center/cover;
+    height: 700px;
+}
+
+.final_win {
+    color: limegreen;
+    font-weight: bold;
+    font-size: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.final_lose {
+    color: red;
+    font-weight: bold;
+    font-size: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    
 }

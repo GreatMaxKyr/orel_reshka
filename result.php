@@ -2,8 +2,7 @@
 $totalwin = $_POST['totalwin'];
 $calcul = $_POST['calcul'];
 $level=$_POST['level'];
-if(5<=$calcul){
-    echo "
+echo "
     <!DOCTYPE html>
     <html lang='uk'>
     <head>
@@ -13,27 +12,27 @@ if(5<=$calcul){
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <title>Орел чи Решка</title>
     </head>
-    <body>
-        <div style='text-align: center;'>
-            <h1 style='margim-bottom: 0; font-family: sans-serif; color: green'>You win congratulations</h1>
-            <img style='' width='600' alt='win' src='img/trophy.png'>
-        </div>"
-    ;
+    <body class='resultbody'>
+            ";
+if(5<=$calcul){
+    echo "
+        <h1 class='final_win'>You win, congratulations!</h1>
+        <div class='win'></div>
+        ";
     if(($totalwin==0 && $level=="easy") || ($totalwin==1 && $level=="medium")){
         $totalwin+=1;
     }
 }else{
     echo "
-        <div style='text-align: center;'>
-        <img width='900' alt='lose' src='img/lose.png'>
-        </div>
+        <h1 class='final_lose'>You lose</h1>
+        <div class='lose'></div>
     ";
 }
 echo " <h1 style='margim-bottom: 0; font-family: sans-serif;'>Ви грали на рівні складності ".$level."</h1>";
 echo "
         <form action='index.php' method='POST'>
             <label><input name='totalwin' value='".$totalwin."' type='hidden'></label>
-            <label><input type='submit' value='Почати спочатку' color: #233323;></label>
+            <label><input  class='ok' type='submit' value='Почати спочатку'></label>
         </form>
     </body>
 ";

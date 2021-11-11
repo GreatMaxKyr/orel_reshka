@@ -22,24 +22,34 @@ if(isset($_POST['olresh'])){
     $mycoin;
     $coin = rand(0,1);
     if($olresh==0){
-    $mycoin='Орел';
+    $mycoin='Максим';
     }else{
-        $mycoin='Решка';
+        $mycoin='Денис';
     }
-    $lose="<p>Ви обрали ".$mycoin." але на жаль Ви не вгадали</p><h1>Ви програли</h1>";
-    $win="<p>Ви обрали ".$mycoin." і випало теж ".$mycoin."</p><h1>Ви виграли</h1>";
+    $lose="<div class='text'>
+            <p>Ви обрали ".$mycoin." але на жаль Ви не вгадали</p>
+            <h1 class='weigh'>Ви програли,</h1>
+            <p>але в вас ще є шанс</p>
+        </div>";
+    $win="<div class='text'>
+            <p>Ви обрали ".$mycoin." і випав теж ".$mycoin."</p>
+            <h1 class='weigh'>Ви виграли,</h1>
+            <p>так тримати</p>
+        </div>";
     switch($level){
         case'easy':
             if($coin == $olresh){
                 echo $win;
                 $calcul += 1;
+                echo "<p>&nbsp;</p>";
             }else{
                 if($perekudca == $olresh){
                     echo $win;
-                    echo "З другого разу";
+                    echo "<div class='text'><p>З другого разу</p></div>";
                     $calcul += 1;
                 }else{
                     echo $lose;
+                    echo "<p>&nbsp;</p>";
                 }
             }
         break;
@@ -56,23 +66,25 @@ if(isset($_POST['olresh'])){
                 if($perekudca == $olresh){
                     echo $win;
                     $calcul += 1;
+                    echo "<p>&nbsp;</p>";
                 }else{
                     echo $lose;
-                    echo "З другого разу";
+                    echo "<div class='text'><p>З другого разу</p></div>";
                 }
             }else{
                 echo $lose;
+                echo "<p>&nbsp;</p>";
             }
         break;
     }   
-}else {
-    echo "Let the battle begin";
-
-}
+};
+echo "
+    <div class='coinform'>
+";
 if($played==10){
-    echo "<form action='result.php' method='POST'>";
+    echo "<form class='maxform' action='result.php' method='POST'>";
 }else{
-    echo "<form action='game.php' method='POST'>";
+    echo "<form class='maxform' action='game.php' method='POST'>";
 }
 echo "
             <label><input name='olresh' value='0' type='hidden'></label>       
@@ -80,13 +92,13 @@ echo "
             <label><input name='level' value='".$level."' type='hidden'></label>
             <label><input name='calcul' value='".$calcul."' type='hidden'></label>
             <label><input name='totalwin' value='".$totalwin."' type='hidden'></label>
-            <label><input class='ormax' value='' type='submit' color: #232323;></label>
+            <label class='coins'><input class='ormax' value='' type='submit' color: #232323;></label>
         </form>
 ";
 if($played==10){
-    echo "<form action='result.php' method='POST'>";
+    echo "<form class='denform' action='result.php' method='POST'>";
 }else{
-    echo "<form action='game.php' method='POST'>";
+    echo "<form class='denform' action='game.php' method='POST'>";
 }
 echo "
             <label><input name='olresh' value='1' type='hidden'></label>
@@ -94,9 +106,10 @@ echo "
             <label><input name='level' value='".$level."' type='hidden'></label>
             <label><input name='calcul' value='".$calcul."' type='hidden'></label>
             <label><input name='totalwin' value='".$totalwin."' type='hidden'></label>
-            <label><input class='reden' value='' type='submit' color: #232323;></label>
+            <label class='coins'><input class='reden' value='' type='submit' color: #232323;></label>
         </form>
 ";
+echo "</div>";
 echo "
     </body>
     </html>

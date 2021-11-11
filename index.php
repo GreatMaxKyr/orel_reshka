@@ -12,10 +12,11 @@ echo"
         <title>Орел чи Решка</title>
     </head>
     <body>
-        <form action='game.php' method='POST'>       
+        <form class='levelcheck' action='game.php' method='POST'>
+        <p>       
 ";
 echo "
-    <label><input checked name='level' value='easy' type='radio' color: #232323;>easy</label>
+            <label class='emh'><input checked name='level' value='easy' type='radio'>easy</label>
 ";
             if (isset($_POST['totalwin'])){
                 $totalwin = $_POST['totalwin'];
@@ -24,20 +25,21 @@ echo "
                 $level = $_POST['level'];
             } 
 echo "         
-            <label><input
+            <label class='emh'><input
 "; 
 if ($totalwin==0){
    echo "disabled";
 }
 echo "           
-            name='level' value='medium' type='radio' color: #232323;>medium</label>
-            <label><input
+            name='level' value='medium' type='radio'>medium</label>
+            <label class='emh'><input
 ";
 if ($totalwin<2){
     echo "disabled";
 }
 echo"            
-                name='level' value='hard' type='radio' color: #232323;>hard</label>
+                name='level' value='hard' type='radio'>hard</label>
+            </p>
             <label><input name='played' value='0' type='hidden'></label>
             <label><input name='calcul' value='0' type='hidden'></label>
             <label><input value='Підтвердити вибір' type='submit' class='ok'></label>
