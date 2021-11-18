@@ -16,7 +16,8 @@ echo"
         <p>       
 ";
 echo "
-            <label class='emh'><input checked name='level' value='easy' type='radio'>easy</label>
+            <input class='cool-radio' id='easy' checked name='level' value='easy' type='radio'>
+            <label for='easy' class='emh'>easy</label>
 ";
             if (isset($_POST['totalwin'])){
                 $totalwin = $_POST['totalwin'];
@@ -25,20 +26,22 @@ echo "
                 $level = $_POST['level'];
             } 
 echo "         
-            <label class='emh'><input
+            <input
 "; 
 if ($totalwin==0){
    echo "disabled";
 }
 echo "           
-            name='level' value='medium' type='radio'>medium</label>
-            <label class='emh'><input
+            name='level' value='medium' id='medium' type='radio' class='cool-radio'>
+            <label for='medium' class='emh'>medium</label>
+            <input
 ";
 if ($totalwin<2){
     echo "disabled";
 }
 echo"            
-                name='level' value='hard' type='radio'>hard</label>
+                name='level' value='hard' id='hard' type='radio' class='cool-radio'>
+                <label for='hard' class='emh'>hard</label>
             </p>
             <label><input name='played' value='0' type='hidden'></label>
             <label><input name='calcul' value='0' type='hidden'></label>

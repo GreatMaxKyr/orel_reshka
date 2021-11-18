@@ -28,13 +28,13 @@ if(isset($_POST['olresh'])){
     }
     $lose="<div class='text'>
             <p>Ви обрали ".$mycoin." але на жаль Ви не вгадали</p>
-            <h1 class='weigh'>Ви програли,</h1>
-            <p>але в вас ще є шанс</p>
+            <h1 class='maintext l weigh'>Ви програли,</h1>
+            <p class='maintext l'>але в вас ще є шанс</p>
         </div>";
     $win="<div class='text'>
             <p>Ви обрали ".$mycoin." і випав теж ".$mycoin."</p>
-            <h1 class='weigh'>Ви виграли,</h1>
-            <p>так тримати</p>
+            <h1 class='maintext weigh'>Ви виграли,</h1>
+            <p class='maintext'>так тримати</p>
         </div>";
     switch($level){
         case'easy':
